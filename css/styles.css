@@ -1,0 +1,298 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Root Variables for Color Scheme */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--dark-color);
+    padding: 1em 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(128, 128, 128);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Home Section */
+#home {
+    padding: 100px 20px;
+    text-align: center;
+    background: url('../images/background.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+#home h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#home p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* About Me Section */
+#about {
+    padding: 50px;
+    background-color: var(--light-color);
+    text-align: center;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: white;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+ul li {
+    background-color: var(--light-color);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul li:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+}
+
+/* Portfolio Section */
+#portfolio {
+    padding: 50px;
+    background-color: white;
+    text-align: center;
+}
+
+.portfolio-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    background-color: var(--light-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item p {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Contact Me Section */
+#contact {
+    padding: 50px;
+    background-color: var(--light-color);
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 20px 0;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+.social-media {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.social-media li {
+    margin: 0 15px;
+}
+
+.social-media li a {
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-media li a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .about-container, .contact-container {
+        padding: 10px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* Profile Picture */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Skill Buttons */
+.skill-btn {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.skill-btn:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
