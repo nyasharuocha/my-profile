@@ -35,7 +35,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: rgb(128, 128, 128);
+
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2em;
@@ -50,9 +50,16 @@ nav ul li a:hover {
 #home {
     padding: 100px 20px;
     text-align: center;
-    background: url('../images/background.jpg') no-repeat center center/cover;
+    background: url('../images/background.jpg') no-repeat center center;
+    background-size: cover;
     color: white;
+    height: 55vh; /* Ensures the section fills the viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 
 #home h1 {
     font-size: 3em;
@@ -265,34 +272,128 @@ button:hover {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-/* Profile Picture */
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* Skills Container */
-.skills-container {
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the footer sticks to the bottom */
 }
 
-/* Skill Buttons */
-.skill-btn {
-    background-color: #007bff; /* Bootstrap primary color */
+/* Wrapper to push footer down */
+.wrapper {
+    flex: 1;
+}
+
+/* Root Variables for Color Scheme */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--dark-color);
+    padding: 1em 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+/* Home Section */
+#home {
+    padding: 100px 20px;
+    text-align: center;
+    background: url('../images/background.jpg') no-repeat center center/cover;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
 }
 
-.skill-btn:hover {
-    background-color: #0056b3; /* Darker shade for hover effect */
+#home h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in-out;
 }
 
+#home p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.footer-social-media {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-social-media li {
+    margin: 0 10px;
+}
+
+.footer-social-media li a {
+
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.footer-social-media li a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .about-container, .contact-container {
+        padding: 10px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
